@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наименование переменных</title>
+</head>
+<body>
+  <h1>Нажмите F12 и перейдите во вкладку console</h1>
+
+  <script>
+        function productAmount(purchase) {
+            let totalAmount = 0;
+            purchase.forEach(i => {
+                totalAmount += i;
+            });
+            return totalAmount;
+        }
+
+        let check = [10000, 20000, 30000];
+        console.log(productAmount(check));
+  </script>
+</body>
+</html>

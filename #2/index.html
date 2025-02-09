@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary_search</title>
+</head>
+<body>
+  <h1>Нажмите F12 и перейдите во вкладку console</h1>
+
+  <script>
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function Binary_search() {
+      min = 0;
+      max = 100;
+      item = getRandomNumber(0, 100);
+      console.log(`Computer 1: Загадал число. (${item})`);
+      console.log("Computer 2: Начинает угадывать число.");
+
+      steps = 0;
+
+      while (min <= max) {
+        steps++;
+        mid = Math.floor((min + max) / 2);
+        console.log(`Computer 2: Это число ${mid}`);
+        if (mid == item) {
+          return console.log(`Computer 2: Угадал! Это число ${mid}, за ${steps} попыток.`);
+        } else if (mid > item) {
+          max = mid - 1;
+          console.log("Computer 1: Меньше.");
+        } else {
+          min = mid + 1;
+          console.log("Computer 1: Больше.");
+        }
+      } 
+      return console.log('Не нашел!');
+    }
+
+
+    Binary_search();
+  </script>
+</body>
+</html>
